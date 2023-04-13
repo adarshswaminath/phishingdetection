@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="bg-gray-900 min-h-screen">
+    <div class="p-3 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-semibold mb-8">Welcome Admin 👋</h2>
+        <div class="flex sm:grid gap-8">
+            <!-- table 1 -->
+            <div class="rounded-lg shadow-lg overflow-hidden">
+                <table class="table-auto w-full">
+                    <tbody>
+                        {% for row in table %}
+                            <tr>
+                                <td class="border px-4 py-2">{{ row[0] }}</td>
+                                <td class="border px-4 py-2">{{ row[1] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- table 2 -->
+            <div class="rounded-lg shadow-lg overflow-hidden">
+                <table class="table-auto w-full">
+                    <tbody>
+                        {% for row in complaintdata %}
+                            <tr>
+                                <td class="border px-4 py-2">{{ row[0] }}</td>
+                                <td class="border px-4 py-2">{{ row[1] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

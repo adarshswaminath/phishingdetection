@@ -1,0 +1,66 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/styles.css')}}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+          <div class="header">
+            <h2 class="animation a1">Welcome Back</h2>
+            <h4 class="animation a2">Log in to your account using username and password</h4>
+          </div>
+          <form class="form" method="POST" action="/">
+            <input type="text" id="username" name="username" class="form-field animation a3" placeholder="Username">
+            <input type="password" id="password" name="password" class="form-field animation a4" placeholder="Password">
+            <p class="animation a5"><a href="{{ url_for('admin') }}">Admin Login</a></p>
+            {% if error %}
+            <p style="color:tomato">{{ error }}</p>
+            {% endif %}
+            <button class="animation a6">LOGIN</button>
+          </form>
+        </div>
+        <div class="right"></div>
+      </div>
+      
+
+
+
+
+
+
+    <!-- <div class="h-screen flex items-center justify-center">
+        <form method="POST" action="/" class="grid bg-gray-600 p-8 text-white">
+            <h2 class="text-white text-xl text-center mb-3 font-semibold">User Login</h2>
+            <div class="mb-6">
+                <label for="username" class="block font-bold mb-2">
+                    Username
+                </label>
+                <input id="username" class="p-3 text-black" name="username" type="text" placeholder="Username">
+            </div>
+            <div class="mb-6">
+                <label class="block font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input id="password" class="p-3 text-black" name="password" type="password" placeholder="Password">
+            </div>
+            {% if error %}
+            <p class="text-red-500 text-xs italic">{{ error }}</p>
+            {% endif %}
+            <div class="mx-auto">
+                <button class="bg-violet-800 px-5 py-3 rounded-md hover:bg-violet-500" type="submit" class="btn">
+                    Sign In
+                </button>
+            </div>
+            <div class="text-center text-sm mt-2 hover:text-blue-500">
+                <a href="{{ url_for('admin') }}">Admin Login !</a>
+            </div>
+        </form>
+    </div> -->
+</body>
+</html>

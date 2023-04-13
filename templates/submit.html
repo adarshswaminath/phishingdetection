@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL detection</title>
+
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+   <!-- component -->
+<body>
+    <section class="min-h-screen flex items-stretch text-white ">
+        <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);">
+            <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+            <div class="w-full px-24 z-10">
+                <h1 class="text-5xl font-bold text-left tracking-wide">Check The URL IS Malicious Or Not</h1>
+            </div>
+        </div>
+        <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0" style="background-color: #161616;">
+            <div class="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center" style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);">
+                <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+            </div>
+            <div class="w-full py-6 z-20">
+                <div id="form2" class="text-center grid">
+
+                    <br>
+                    <h6 class="mt-2">
+                        <a href={{ url }} class="text-blue-600" target="_blank">{{ url }}</a>
+                    </h6>
+
+                    <br>
+                    <h3 class="text-white" id="prediction"></h3>
+                </div>
+                <form action="/submit" method="post" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+                    <div class="pb-2 pt-4">
+                        <input type="text" name="url" id="url" placeholder="URL" class="block w-full p-4 text-lg rounded-sm bg-black">
+                    </div>
+                    <div class="px-4 pb-2 pt-4">
+                        <button class="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none" type="submit">Check</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <!-- <div>
+            <div>
+                <div id="form1" class="px-12 py-10 bg-gray-600">
+                    <br>
+                    <div class="flex gap-3">
+                        <h2 class="title text-2xl text-white mb-3 text-semibold">Phishing Url Detection</h2>
+                        <form action="{{ url_for('logout')}}" method="post">
+                            <button type="submit">❌</button>
+                        </form>
+                    </div>
+                    <form action="/submit" method="post" class="grid">
+                        <input class="p-3 mt-5" type="text" name='url' id="url" placeholder="Enter URL" required="" />
+                        <button class="bg-violet-800 px-5 py-3 rounded-md hover:bg-violet-500 mx-auto mt-2 text-white" role="button">Check
+                            here</button>
+                    </form>
+
+                </div>
+                <div id="form2" class="text-center grid">
+
+                    <br>
+                    <h6 class="mt-2">
+                        <a href={{ url }} class="text-blue-600" target="_blank">{{ url }}</a>
+                    </h6>
+
+                    <br>
+                    <h3 class="text-white" id="prediction"></h3>
+                </div>
+
+            </div>
+        </div> -->
+
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
+
+        <script>
+
+            let x = '{{xx}}';
+            let num = x * 100;
+            if (0 <= x && x < 0.50) {
+                num = 100 - num;
+            }
+            let txtx = num.toString();
+            if (x <= 1 && x >= 0.50) {
+                var label = "Website is " + txtx + "% safe to use...";
+                document.getElementById("prediction").innerHTML = label;
+                document.getElementById("button1").style.display = "block";
+            }
+            else if (0 <= x && x < 0.50) {
+                var label = "Website is " + txtx + "% unsafe to use..."
+                document.getElementById("prediction").innerHTML = label;
+                document.getElementById("button2").style.display = "block";
+            }
+
+        </script>
+
+</body>
+
+</html>

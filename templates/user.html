@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<body>
+<!-- component -->
+<div class="flex flex-col gap-4 h-screen items-center justify-center">
+  
+  <!-- Card 1 -->
+  <a class="rounded-sm w-1/2 grid grid-cols-12 bg-white shadow p-3 gap-2 items-center hover:shadow-lg transition delay-150 duration-300 ease-in-out hover:scale-105 transform" href="{{url_for('submit')}}">
+    
+    <!-- Icon -->
+    <div class="col-span-12 md:col-span-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="#2563eb">
+        <path d="M12 2C6.483 2 2 6.483 2 12c0 3.365 1.576 6.389 4.033 8.33l.966-1.606C4.957 16.619 4 14.508 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8c0 2.508-.957 4.619-2.482 6.724l.966 1.606C22.424 18.389 24 15.365 24 12c0-5.517-4.483-10-10-10zm0 17c-1.949 0-3.718-.702-5.114-2.073L16.927 7.15C17.298 8.75 18 10.453 18 12c0 3.308-2.692 6-6 6zm6.84-6.84l-4.58 4.58-2.996-2.996c.26-.54.448-1.133.534-1.744l3.117 3.117-1.26 1.26c.495.274.946.604 1.34.999l4.58-4.58-1.414-1.414z"/>
+      </svg>
+      
+      
+    </div>
+    
+    <!-- Title -->
+    <div class="col-span-11 xl:-ml-5">
+      <p class="text-blue-600 font-semibold"> Check The URL is Malicious or Not </p>
+    </div>
+    
+    <!-- Description -->
+    <div class="md:col-start-2 col-span-11 xl:-ml-5">
+      <p class="text-sm text-gray-800 font-light"> Verify the safety of a web address with Check The URL's malicious detection tool</p>
+    </div>
+    
+  </a>
+  
+  
+  <!-- Card 2 -->
+  <a class="rounded-sm w-1/2 grid grid-cols-12 bg-white shadow p-3 gap-2 items-center hover:shadow-lg transition delay-150 duration-300 ease-in-out hover:scale-105 transform" href="{{url_for('gmail')}}">
+    
+    <!-- Icon -->
+    <div class="col-span-12 md:col-span-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="#EA4335">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3.5L20.49 12 12 20.49 3.51 12 12 3.5zM4.98 12l7.02 5.18L19.02 12l-7.04-5.18L4.98 12z"/>
+      </svg>
+      
+    </div>
+    
+    <!-- Title -->
+    <div class="col-span-11 xl:-ml-5">
+      <p class="text-blue-600 font-semibold"> Email Reputation Checker </p>
+    </div>
+    
+    <!-- Description -->
+    <div class="md:col-start-2 col-span-11 xl:-ml-5">
+      <p class="text-sm text-gray-800 font-light">Assess the reputation of an email address with Email Reputation Checker's comprehensive analysis </p>
+    </div>
+    
+  </a>
+  
+  
+  <!-- Card 3 -->
+  <a class="rounded-sm w-1/2 grid grid-cols-12 bg-white shadow p-3 gap-2 items-center hover:shadow-lg transition delay-150 duration-300 ease-in-out hover:scale-105 transform" href="{{ url_for('complaint')}}">
+    
+    <!-- Icon -->
+    <div class="col-span-12 md:col-span-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="#000000">
+        <path d="M11 6V2h2v4h6v16H5V6h6zM8.5 8H7v2h1.5V8zm3 0H10v2h1.5V8zm3 0h-1.5v2H13V8zm-6 3H7v2h1.5v-2zm3 0H10v2h1.5v-2zm3 0h-1.5v2H13v-2zm-6 3H7v2h1.5v-2zm3 0H10v2h1.5v-2zm3 0h-1.5v2H13v-2z"/>
+      </svg>
+      
+    </div>
+    
+    <!-- Title -->
+    <div class="col-span-11 xl:-ml-5">
+      <p class="text-blue-600 font-semibold"> Any Feedback </p>
+    </div>
+    
+    <!-- Description -->
+    <div class="md:col-start-2 col-span-11 xl:-ml-5">
+      <p class="text-sm text-gray-800 font-light"> Provide valuable feedback on products, services, or experiences with ease using our user-friendly Feedback platform </p>
+    </div>
+    
+  </a>
+  <!-- Card 4 -->
+  <form class="rounded-sm w-1/2 grid grid-cols-12 bg-white shadow p-3 gap-2 items-center hover:shadow-lg transition delay-150 duration-300 ease-in-out hover:scale-105 transform" action="{{ url_for('logout')}}" method="post">
+    
+    <!-- Icon -->
+    <div class="col-span-12 md:col-span-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M18 12l-4 4v-3h-7v-2h7v-3zM12 2a9.77 9.77 0 0 0-7 2.59l1.67 1.67c1.74-1.26 3.89-2.04 6.33-2.19l-.99-1.96a10.05 10.05 0 0 0-6.01 1.53l2.08 1.58c1.33-.6 2.81-1 4.41-1z"/>
+      </svg> 
+    </div>
+    
+    <!-- Title -->
+    <div class="col-span-11 xl:-ml-5">
+      <button class="text-blue-600 font-semibold" type="submit">Logout</button>
+    </div>
+    
+    <!-- Description -->
+    <div class="md:col-start-2 col-span-11 xl:-ml-5">
+      <p class="text-sm text-gray-800 font-light"> Logout with ease using our intuitive and user-friendly platform</p>
+    </div>
+    
+  </form>
+  
+</div>
+
+
+
+
+
+
+  <!-- <span class="text-green-500 text-cenetr">{{data}}</span>
+ <div class="h-screen flex justify-center items-center">
+   <div class="gap-4">
+    <a href="{{url_for('submit')}}" class="p-3 bg-violet-800 rounded-lg">URL</a>
+    <a href="{{url_for('gmail')}}" class="bg-violet-800 p-3 rounded-lg">Gmail</a>
+    <a href="{{ url_for('complaint')}}" class="bg-violet-800 rounded-lg p-3">Complaint</a>
+   </div>
+ </div> -->
+</body>
+</html>
