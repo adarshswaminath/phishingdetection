@@ -21,7 +21,7 @@
 				</div>
 			</div>
 			<div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0"
-				style="background-color: #161616;">
+				style="background-color: #fff;">
 				<div class="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center"
 					style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);">
 					<div class="absolute bg-black opacity-60 inset-0 z-0"></div>
@@ -32,8 +32,8 @@
 						<br>
 						<h6 class="mt-2">
 							{% if data %}
-							<p class="text-white">Reputation : {{ data.reputation }}</p>
-							<p class="text-white">Suspicious: {{ data.suspicious}}</p>
+							<p class="text-black">Reputation : {{ data.reputation }}</p>
+							<p class="text-black">Suspicious: {{ data.suspicious}}</p>
 							{% endif %}
 						</h6>
 
@@ -41,30 +41,45 @@
 					<form method="post" action="gmail" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
 						<div class="pb-2 pt-4">
 							<input type="emial" name="email" id="email" placeholder="Email To Check"
-								class="block w-full p-4 text-lg rounded-sm bg-black">
+								class="block text-black w-full p-4 text-lg rounded-sm border-black border-2">
 						</div>
 						<div class="px-4 pb-2 pt-4">
 							<button
-								class="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none"
+								class="uppercase block w-full p-4 text-lg rounded-full bg-red-500 hover:bg-red-600 focus:outline-none"
 								type="submit">Check</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</section>
-		<!-- <div class="h-screen flex items-center justify-center">
-			<div class="grid gap-3 p-8 bg-gray-600">
-				<form method="post" action="gmail">
-					<input type="text" id="email" name="email" class="p-3">
-					<button type="submit" class="btn bg-violet-500 text-white border-none">Check</button>
-				</form>
-				<h1 class="text-white">Email Reputation Checker</h1>
-				{% if data %}
-				<p class="text-white">Reputation : {{ data.reputation }}</p>
-				<p class="text-white">Suspicious: {{ data.suspicious}}</p>
-				{% endif %}
+		<footer class="bg-red-500 py-6 lg:py-8">
+			<div class="container mx-auto px-4 lg:px-8">
+			  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+				<div class="text-center lg:text-left">
+				  <h3 class="text-white font-bold text-xl mb-4">About Us</h3>
+				  <p class="text-gray-200 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="text-center lg:text-left">
+				  <h3 class="text-white font-bold text-xl mb-4">Contact Us</h3>
+				  <ul class="list-none">
+					<li class="mb-2"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Email: info@example.com</a></li>
+					<li class="mb-2"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Phone: +1 123-456-7890</a></li>
+					<li><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Address: 123 Main St, Anytown USA</a></li>
+				  </ul>
+				</div>
+				<div class="text-center lg:text-left">
+				  <h3 class="text-white font-bold text-xl mb-4">Follow Us</h3>
+				  <ul class="flex justify-center lg:justify-start list-none">
+					<li class="mr-4"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-facebook fa-lg"></i></a></li>
+					<li class="mr-4"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-twitter fa-lg"></i></a></li>
+					<li class="mr-4"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-instagram fa-lg"></i></a></li>
+					<li><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-linkedin fa-lg"></i></a></li>
+				  </ul>
+				</div>
+			  </div>
 			</div>
-		</div> -->
+		  </footer>
+		  
 	</body>
 
 </html>

@@ -59,7 +59,7 @@ def login():
         password = request.form['password']
 
         # connect to the database and retrieve the password for the entered username
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('./databases/database.db')
         cursor = conn.cursor()
         cursor.execute("SELECT password FROM users WHERE username = ?", [username])
         result = cursor.fetchone()
@@ -94,7 +94,7 @@ def complaintwrite():
     email = request.form['user']
     msg = request.form['complaint']
     usercomplaint = f"\n{email},{msg}"
-    with open('complaint.csv','a') as complaintfile:
+    with open('./databases/complaint.csv','a') as complaintfile:
         complaintfile.write(usercomplaint)
     return render_template('user.html',data="Complain Registered")
 
@@ -106,7 +106,7 @@ def submit():
 
         url = request.form["url"]
         data = f'{url},{today} \n'
-        with open('data.csv',"a") as csvfile:
+        with open('./databases/data.csv',"a") as csvfile:
             csvfile.write(data)
         obj = FeatureExtraction(url)
         x = np.array(obj.getFeaturesList()).reshape(1,30) 
@@ -129,15 +129,15 @@ def admin():
 def adminpost():
     username = request.form['username']
     password = request.form['password']
-    connect = sqlite3.connect('login.db')
+    connect = sqlite3.connect('./databases/login.db')
     cursor=connect.cursor()
     user_data=[(username,password)]
     # read user csv file
-    with open('data.csv','r') as f:
+    with open('./databases/data.csv','r') as f:
         data=[tuple(line) for line in csv.reader(f)]
         table=tuple(data)
     # read  user complaints
-    with open('complaint.csv') as file:
+    with open('./databases/complaint.csv') as file:
         eachcomplaint = [tuple(line) for line in csv.reader(file)]
         complaintdata = tuple(eachcomplaint)
         # play with db

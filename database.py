@@ -1,7 +1,7 @@
 import sqlite3
 
 # create a new database file
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('./databases/database.db')
 
 # create a table to store usernames and passwords
 conn.execute('''CREATE TABLE users
