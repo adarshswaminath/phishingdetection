@@ -34,7 +34,7 @@
                     <strong>
                         <a href={{ url }} id="url" target="_blank">{{ url }}</a>
                     </strong>
-                     <h3 id="prediction"></h3>
+                    <h3 id="prediction"></h3>
                 </div>
 
                 <!-- <div id="form2" class="text-center grid">
@@ -87,11 +87,19 @@
         }
         let txtx = num.toString();
         if (x <= 1 && x >= 0.50) {
-            var label = "Website is " + txtx + "% safe to use...";
+            if (txtx == 100) {
+                var label = "Website is " + txtx + "% safe to use...";
+                document.getElementById("alert").style.display = "block"
+                document.getElementById("alert").style.background = "#38a169"
+                document.getElementById("prediction").innerHTML = label;
+                document.getElementById("button1").style.display = "block";
+            } else {
+                var label = "Website is " + txtx + "% safe to use...";
             document.getElementById("alert").style.display = "block"
-            document.getElementById("alert").style.background = "#38a169"
+            document.getElementById("alert").style.background = "orange"
             document.getElementById("prediction").innerHTML = label;
             document.getElementById("button1").style.display = "block";
+            }
         }
         else if (0 <= x && x < 0.50) {
             var label = "Website is " + txtx + "% unsafe to use..."

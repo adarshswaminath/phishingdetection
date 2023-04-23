@@ -31,12 +31,52 @@
 					<div id="form2" class="text-center grid">
 
 						<br>
-						<h6 class="mt-2">
+						{% if data %}
+						<div class="text-black">
+							<p><strong>Email:</strong> {{ data.email }}</p>
+						<p><strong>Reputation:</strong> {{ data.reputation }}</p>
+						<p><strong>Suspicious:</strong> {{ "Yes" if data.suspicious else "No" }}</p>
+						<p><strong>References:</strong> {{ data.references }}</p>
+						<h2>Details:</h2>
+						<ul>
+							<li><strong>Blacklisted:</strong> {{ "Yes" if data.details.blacklisted else "No" }}</li>
+							<li><strong>Malicious Activity:</strong> {{ "Yes" if data.details.malicious_activity else
+								"No" }}</li>
+							<li><strong>Malicious Activity (Recent):</strong> {{ "Yes" if
+								data.details.malicious_activity_recent else "No" }}</li>
+							<li><strong>Credentials Leaked:</strong> {{ "Yes" if data.details.credentials_leaked else
+								"No" }}</li>
+							<li><strong>Credentials Leaked (Recent):</strong> {{ "Yes" if
+								data.details.credentials_leaked_recent else "No" }}</li>
+							<li><strong>Data Breach:</strong> {{ "Yes" if data.details.data_breach else "No" }}</li>
+							<li><strong>Last Seen:</strong> {{ data.details.last_seen }}</li>
+							<li><strong>Domain Exists:</strong> {{ "Yes" if data.details.domain_exists else "No" }}</li>
+							<li><strong>Domain Reputation:</strong> {{ data.details.domain_reputation }}</li>
+							<li><strong>New Domain:</strong> {{ "Yes" if data.details.new_domain else "No" }}</li>
+							<li><strong>Days Since Domain Creation:</strong> {{data.details.days_since_domain_creation
+								}}</li>
+							<li><strong>Suspicious TLD:</strong> {{ "Yes" if data.details.suspicious_tld else "No" }}
+							</li>
+							<li><strong>Spam:</strong> {{ "Yes" if data.details.spam else "No" }}</li>
+							<li><strong>Free Provider:</strong> {{ "Yes" if data.details.free_provider else "No" }}</li>
+							<li><strong>Disposable:</strong> {{ "Yes" if data.details.disposable else "No" }}</li>
+							<li><strong>Deliverable:</strong> {{ "Yes" if data.details.deliverable else "No" }}</li>
+							<li><strong>Accept All:</strong> {{ "Yes" if data.details.accept_all else "No" }}</li>
+							<li><strong>Valid MX:</strong> {{ "Yes" if data.details.valid_mx else "No" }}</li>
+							<li><strong>Spoofable:</strong> {{ "Yes" if data.details.spoofable else "No" }}</li>
+							<li><strong>SPF Strict:</strong> {{ "Yes" if data.details.spf_strict else "No" }}</li>
+							<li><strong>DMARC Enforced:</strong> {{ "Yes" if data.details.dmarc_enforced else "No" }}
+							</li>
+							<li><strong>Profiles:</strong> {{ data.details.profiles }}</li>
+						</ul>
+						</div>
+						{% endif%}
+						<!-- <h6 class="mt-2">
 							{% if data %}
 							<p class="text-black">Reputation : {{ data.reputation }}</p>
 							<p class="text-black">Suspicious: {{ data.suspicious}}</p>
 							{% endif %}
-						</h6>
+						</h6> -->
 
 					</div>
 					<form method="post" action="gmail" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
@@ -55,32 +95,47 @@
 		</section>
 		<footer class="bg-red-500 py-6 lg:py-8">
 			<div class="container mx-auto px-4 lg:px-8">
-			  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-				<div class="text-center lg:text-left">
-				  <h3 class="text-white font-bold text-xl mb-4">About Us</h3>
-				  <p class="text-gray-200 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+					<div class="text-center lg:text-left">
+						<h3 class="text-white font-bold text-xl mb-4">About Us</h3>
+						<p class="text-gray-200 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+					<div class="text-center lg:text-left">
+						<h3 class="text-white font-bold text-xl mb-4">Contact Us</h3>
+						<ul class="list-none">
+							<li class="mb-2"><a href="#"
+									class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Email:
+									info@example.com</a></li>
+							<li class="mb-2"><a href="#"
+									class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Phone: +1
+									123-456-7890</a></li>
+							<li><a href="#"
+									class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Address:
+									123 Main St, Anytown USA</a></li>
+						</ul>
+					</div>
+					<div class="text-center lg:text-left">
+						<h3 class="text-white font-bold text-xl mb-4">Follow Us</h3>
+						<ul class="flex justify-center lg:justify-start list-none">
+							<li class="mr-4"><a href="#"
+									class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i
+										class="fab fa-facebook fa-lg"></i></a></li>
+							<li class="mr-4"><a href="#"
+									class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i
+										class="fab fa-twitter fa-lg"></i></a></li>
+							<li class="mr-4"><a href="#"
+									class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i
+										class="fab fa-instagram fa-lg"></i></a></li>
+							<li><a href="#"
+									class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i
+										class="fab fa-linkedin fa-lg"></i></a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="text-center lg:text-left">
-				  <h3 class="text-white font-bold text-xl mb-4">Contact Us</h3>
-				  <ul class="list-none">
-					<li class="mb-2"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Email: info@example.com</a></li>
-					<li class="mb-2"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Phone: +1 123-456-7890</a></li>
-					<li><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out">Address: 123 Main St, Anytown USA</a></li>
-				  </ul>
-				</div>
-				<div class="text-center lg:text-left">
-				  <h3 class="text-white font-bold text-xl mb-4">Follow Us</h3>
-				  <ul class="flex justify-center lg:justify-start list-none">
-					<li class="mr-4"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-facebook fa-lg"></i></a></li>
-					<li class="mr-4"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-twitter fa-lg"></i></a></li>
-					<li class="mr-4"><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-instagram fa-lg"></i></a></li>
-					<li><a href="#" class="text-gray-200 hover:text-white transition duration-300 ease-in-out"><i class="fab fa-linkedin fa-lg"></i></a></li>
-				  </ul>
-				</div>
-			  </div>
 			</div>
-		  </footer>
-		  
+		</footer>
+
 	</body>
 
 </html>
